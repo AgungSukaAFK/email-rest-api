@@ -5,6 +5,16 @@ const app = express();
 
 app.use(express.json());
 
+// Contoh menggunakan Express.js
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Ganti dengan domain situs web Anda
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.get("/", (req, res) => {
   res.json({
     message: "Home",
