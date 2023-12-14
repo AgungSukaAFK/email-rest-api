@@ -2,6 +2,7 @@ import express from "express";
 import email from "./utils/email.js";
 
 const app = express();
+const version = "1.0 OMEGA";
 
 app.use(express.json());
 
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   res.json({
     message: "Home",
+    version,
   });
 });
 
